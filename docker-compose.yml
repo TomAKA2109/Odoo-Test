@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:17
+    user: root
+    environment:
+      - POSTGRES_USER=odoo
+      # Change postgre pass in this file and etc/odoo.conf also
+      - POSTGRES_PASSWORD=Tom2003!
+      - POSTGRES_DB=postgres
+    restart: always             # run as a service
+    volumes:
+        - ./data/postgre:/var/lib/postgresql/data
+
+  odoo18:
+    image: itpro/odoo18-custom:1.0 #odoo:18
+    user: root
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+      - "8072:8072" # live chat
+    tty: true
+    command: odoo -c /opt/odoo/custom_config/odoo.conf
+    #command: >
+    #  bash -c "
+    #  pip3 install fsspec packaging &&
+    #  exec odoo -c /opt/odoo/custom_config/odoo.conf
+    #  "
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=Tom2003!
+      - PIP_BREAK_SYSTEM_PACKAGES=1
+      - PROXY_MODE=1
+    volumes:
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
+      #Uncomment next two lines for initilization
+      #- ./entrypoint.sh:/entrypoint.sh
+      #- ./etc/requirements.txt:/etc/odoo/requirements.txt
+      - ./addons:/addons
+      - ./data/odoo:/data/odoo
+      - ./etc:/opt/odoo/custom_config
+      - ./data/pip-cache:/root/.cache/pip
+    restart: always             # run as a service
