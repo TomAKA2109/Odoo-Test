@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_simple_department,hr.simple.department,model_hr_simple_department,,1,1,1,1
+access_hr_simple_position,hr.simple.position,model_hr_simple_position,,1,1,1,1
+access_hr_simple_employee,hr.simple.employee,model_hr_simple_employee,,1,1,1,1

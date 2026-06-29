@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="hr_simple.SalaryWidget">
+        <div class="salary_widget">
+            <!-- Progress bar -->
+            <div style="background:#eee; border-radius:4px; height:8px; margin-bottom:4px;">
+                <div t-attf-style="width:#{percentage}%; background:#{color}; height:8px; border-radius:4px;"/>
+            </div>
+            <small t-out="percentage"/>% — 
+            <span t-out="salary.toLocaleString('vi-VN')"/> VNĐ
+            <!-- Ô nhập số -->
+            <input type="number"
+                   t-att-value="salary"
+                   t-on-change="onSalaryChange"
+                   class="o_input"
+                   style="margin-top:4px; width:100%;"/>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,67 @@
+<odoo>
+    <record id="view_employee_list" model="ir.ui.view">
+        <field name="name">hr.simple.employee.list</field>
+        <field name="model">hr.simple.employee</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="department_id" widget="department_badge"/>
+                <field name="position_id"/>
+                <field name="salary"/>
+                <field name="join_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">hr.simple.employee.form</field>
+        <field name="model">hr.simple.employee</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="General Info">
+                            <field name="name"/>
+                            <field name="department_id"/>
+                            <field name="position_id"/>
+                        </group>
+                        <group string="Employment Details">
+                            <field name="salary" widget="salary_widget"/>
+                            <field name="join_date"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_employee" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">hr.simple.employee</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_hr_simple_root"
+              name="HR Simple"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_simple_employee"
+              name="Employees"
+              parent="menu_hr_simple_root"
+              action="action_employee"
+              sequence="1"/>
+
+    <menuitem id="menu_hr_simple_department"
+              name="Departments"
+              parent="menu_hr_simple_root"
+              action="action_department"
+              sequence="2"/>
+
+    <menuitem id="menu_hr_simple_position"
+              name="Positions"
+              parent="menu_hr_simple_root"
+              action="action_position"
+              sequence="3"/>
+</odoo>

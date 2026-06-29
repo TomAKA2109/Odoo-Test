@@ -1,0 +1,12 @@
+<odoo>
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="module" src="/hr_simple/static/src/components/salary_widget.js"/>
+            <t t-call-assets="hr_simple.assets_salary_widget" lazy_load="True"/>
+        </xpath>
+    </template>
+
+    <template id="assets_salary_widget">
+        <script type="module" src="/hr_simple/static/src/components/salary_widget.js"/>
+    </template>
+</odoo>
