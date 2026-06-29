@@ -2,8 +2,8 @@ from odoo import models, fields
 
 class MyFirstModel(models.Model):
     _name = 'my.first.model'
-    _description = 'Model đầu tiên của tôi'
+    _description = 'My first module'
 
-    name = fields.Char(string='Tên', required=True)
-    description = fields.Text(string='Mô tả')
-    active = fields.Boolean(string='Đang hoạt động', default=True)
+    name = fields.Char(string='Name', required=True)
+    description = fields.Text(string='Description')
+    active = fields.Boolean(string='Active', default=True)
