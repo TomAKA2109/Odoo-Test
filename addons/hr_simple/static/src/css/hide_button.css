@@ -1,3 +1,64 @@
+/* ẨN NÚT NEW */
 /* .o_list_button_add {
     display: none !important;
 } */
+
+/* ẨN NÚT SETTINGS (HÌNH BÁNH RĂNG CƯA) */
+/* .o_cp_action_menus .o-dropdown.dropdown-toggle {
+    display: none !important;
+} */
+
+/* ĐỔI STYLE FORM VIEW CỦA EMPLOYEE */
+.o_form_view .o_form_sheet {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.o_form_view .o_group .o_horizontal_separator {
+    color: #5a4f7f;
+    font-size: 16px;
+    border-bottom: 2px solid #5a4f7f;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.o_form_view .o_form_label {
+    color: #5a4f7f;
+    font-weight: 600;
+}
+
+.o_form_view .o_group {
+    background: #fafafa;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+/* ĐỔI STYLE LIST VIEW CỦA EMPLOYEE */
+.o_list_view thead {
+    background-color: #5a4f7f !important;
+}
+
+.o_list_view thead th {
+    color: white !important;
+    font-weight: 600;
+    background-color: #5a4f7f !important;
+}
+
+.o_list_renderer_header input[type="checkbox"] {
+    accent-color: white;
+}
+
+/* Đổi style nút New */
+.o_list_button_add {
+    border-radius: 20px !important;
+    box-shadow: 0 3px 8px rgba(90, 79, 127, 0.4) !important;
+    padding: 6px 20px !important;
+    transition: all 0.2s ease;
+}
+
+.o_list_button_add:hover {
+    box-shadow: 0 5px 12px rgba(90, 79, 127, 0.5) !important;
+    transform: translateY(-1px);
+}
