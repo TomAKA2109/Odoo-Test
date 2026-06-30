@@ -11,13 +11,15 @@
         'views/employee_views.xml',
     ],
     'assets': {
-    'web.assets_backend': [
-        'hr_simple/static/src/components/salary_widget.xml',
-        'hr_simple/static/src/components/salary_widget.js',
-        'hr_simple/static/src/components/department_badge_widget.xml',
-        'hr_simple/static/src/components/department_badge_widget.js',
-    ],
-},
+        'web.assets_backend': [
+            'hr_simple/static/src/components/salary_widget.xml',
+            'hr_simple/static/src/components/salary_widget.js',
+            'hr_simple/static/src/components/department_badge_widget.xml',
+            'hr_simple/static/src/components/department_badge_widget.js',
+            'hr_simple/static/src/js/hide_new_button.js',
+            'hr_simple/static/src/css/hide_button.css',
+        ],
+    },
     'installable': True,
     'auto_install': False,
 }
